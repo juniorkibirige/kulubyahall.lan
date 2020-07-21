@@ -1,0 +1,322 @@
+/* My own css files */
+html,body{
+	margin:0;
+	padding:0; 
+}
+
+.home{
+	
+	background: url(../images/kul_home.jpg)no-repeat center center; 
+	background-size:cover; 
+	background-color: #fff;
+	display: table;
+	width: 100%;
+	height:  700px;
+	position: relative;
+	-webkit-filter: grayscale(0.4);
+			filter: grayscale(0.4);
+}
+@media (max-width: 768px) {
+	.col-mid {
+		display: block !important;
+	}
+	.col-lag {
+		display: none !important;
+	}
+}
+
+.position{
+	position: relative;
+	top: 200px;
+}
+
+.landing-text{
+	display: table-cell;
+	text-align: center;
+	vertical-align: top;
+}
+
+.landing-text h1{
+	font-size:270%;
+	font-weight: 700;
+}
+
+
+#pano{
+	background: url(../images/home.jpg)no-repeat center center; 
+	-webkit-filter:grayscale(50%);
+			filter:grayscale(50%);
+	background-size: cover; 
+	display: table;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	margin-bottom: 15px!important;
+
+}
+
+ .text-center p,h3{
+ 	font: blue;
+}
+
+.text-italic{
+	font-style: italic;
+}
+
+.ele-text{
+	font-size: 98%;
+}
+
+table{
+	width: 100%;
+	border-radius: .5rem;
+
+}
+
+table tr{
+	text-align: center;
+	color: #fff;
+	padding: 0px;
+	background-color: rgb(54,57,62);
+}
+
+.box{
+	text-align: center;
+	width:90%;
+	height: 90%;
+	position: relative;
+	top:-10%;
+	background-color: rgb(185,185,185);
+	border-radius: .25rem;
+	border: 1px rgb(54,57,62) solid;
+	z-index: 1;
+	overflow: hidden;
+
+}
+
+.box-background{
+	width:80%;
+	height: 50%;
+	position: relative;
+	top:10%;
+	background-color: rgb(82,82,82);
+	border-radius: .25rem;
+
+	/*border: 1px rgb(54,57,62) solid;*/
+
+}
+
+.bg-color{
+	background-color: rgb(226,226,226);
+}
+
+.center{
+	position: relative;
+	top: 30%;
+}
+
+.center h4{
+	font-weight: 700;
+	font-style: italic;
+	color: rgb(27,30,33);
+	transition: transform 400ms ease-in-out ;
+	z-index: 1;
+}
+
+.center-2{
+	position: relative;
+	top: -190px;
+	right: 0px;
+}
+
+.box:hover .center>h4{
+	transform: translate(0px, 152px);
+}
+.box:hover .center-2 .carousel{
+	transform: translate(0px, 152px);
+}
+
+.center-2 .carousel{
+	transition: transform 400ms ease-in-out ;
+}
+
+.col-4{
+	padding: 0 0 0 0;
+	font-size: 1.7rem;
+}
+
+.date{
+	padding: 0 0 0 0;
+	position: relative;
+	top: 50%;
+
+}
+
+.event{
+	
+	font-size: 1.25rem;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	font-weight: 700;
+}
+
+.row .date{
+	font-style: italic;
+}
+
+.box .align-middle{
+	font-weight: 600;
+	font-style: italic;
+	position: relative;
+	top:15%;
+}
+
+
+
+.my-img{
+	filter: grayscale(100%); 
+	width: 100%;
+	border-radius: 3px;
+	transition: filter 0.3s ease ;
+
+}
+.my-img:hover {
+	-webkit-filter:grayscale(0);
+	filter:grayscale(0);
+}
+
+.box .img-fluid{
+	width: 40px;
+	height: 40px;
+}/* this is for the ka small elephant in the span */
+	
+
+.folk-row{
+	height: 600px;
+}
+
+.img-circle{
+	border-radius: 50%;
+	border: 1px solid black;
+	width: 100%;
+	height: 100%;
+}
+
+.toast {
+	background-color: gainsboro;
+}
+.toast.show {
+	opacity: 0.95 !important;
+}
+#toast {
+	top: 50px !important;
+	right: 20px !important;
+}
+
+.jumbotron{
+	font-size: 1.1rem;
+	font-weight: 600;
+	padding:2.2rem 1rem;
+	margin-bottom:2rem;
+	background-color:#e9ecef;
+	border-radius:.3rem
+}
+
+.hier h4{
+	text-align: center;
+}
+
+.hier .img-circle{
+	max-height: 200px;
+	min-height: fit-content;
+	justify-content: space-between;
+}
+
+.see-more{
+	color:grey ; 
+}
+
+a:hover{
+	color: rgb(54,57,62);
+	text-decoration: none;
+}
+
+.inline{
+	color: black;
+}
+
+#pano1{
+	background: url(/resources/static/images/stairs.jpg)no-repeat center center; 
+	-webkit-filter:grayscale(50%);
+			filter:grayscale(50%);
+	background-size: cover; 
+	display: table;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+
+.span-logo{
+	margin-left: 8px;
+	border-radius: 50%;
+	width: 1.8em;
+	height: 1.8em;
+	border:1px solid black;
+}
+
+
+
+
+@media (min-width:768px)
+{
+	.col-last{
+		margin-top: -3vh;
+	}
+	.col-middle{
+		margin-top: 15vh;
+	}
+}
+
+#pano2{
+	background: url(../images/hall_pano.jpg)no-repeat center center; 
+	-webkit-filter:grayscale(50%);
+			filter:grayscale(50%);
+	background-size: cover; 
+	display: table;
+	width: 100%;
+	height: 50vh;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.grey{
+	color: grey;
+}
+
+.table{
+	color:red;
+}
+
+.folklore-top{
+	background: url(/resources/static/images/folklore.jpg)no-repeat center center; 
+	background-size:cover; 
+	background-color: #fff;
+	display: table;
+	width: 100%;
+	height: 47vh;
+	position: relative;
+	-webkit-filter: grayscale(0.4);
+			filter: grayscale(0.4);
+
+}
+
+.img-box{
+	width:194.33px;
+}
+
+.exec-item{
+	width:20vw;
+	border-radius: 2em;
+}
