@@ -1,0 +1,4 @@
+<filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|txt)$">
+    Header set Cache-Control "max-age=84600, public, no-cache"
+</filesMatch>
+ExpiresDefault "access plus 1 day"

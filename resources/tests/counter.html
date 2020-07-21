@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Couter</title>
+    <link rel="stylesheet" href="bootstrap4.min.css">
+    <link rel="stylesheet" href="font-awesome/css/all.css">
+    <!-- <script src="fontawesome.min.js"></script> -->
+    <script src="jquery-3.4.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+         body {
+             background-image: linear-gradient(rgba(49,0,255,0.8), rgba(132,5,29,0.8 )), url('favicon.png');
+             background-size: cover;
+             background-position: center;
+         }
+         .counter-section {
+             margin: 10% auto;
+             color: #ffffff;
+             height: 100px;
+         }
+         .icon-box {
+             border: 1px solid #fff;
+             height: 30px;
+             width: 30px;
+             margin: 10px auto;
+             transform: rotate(45deg);
+         }
+         .icon-box .fa {
+             font-size: 20px;
+             margin: 5px auto;
+             color: #ffc800;
+             transform: rotate(-45deg);
+         }
+         .counter-box p{
+             font-size: 20px;
+         }
+         .counter-box .counter{
+             font-size: 15px;
+         }
+    </style>
+</head>
+<body>
+    <div class="container counter-section">
+        <div class="row text-center">
+            <div class="col-md-4 col-sm-4 counter-box">
+                <div class="icon-box">
+                    <i class="fa fa-globe-africa"></i>
+                </div>
+                <p id="t" class="counter">150</p>
+                <p style="font-size:medium">Visits Today</p>
+            </div>
+            <div class="col-md-4 col-sm-4 counter-box">
+                <div class="icon-box">
+                    <i class="fa fa-users"></i>
+                </div>
+                <p id="y" class="counter">10</p>
+                <p style="font-size:medium">Visits Yesterday</p>
+            </div>
+            <div class="col-md-4 col-sm-4 counter-box">
+                <div class="icon-box">
+                    <i class="fa fa-trophy"></i>
+                </div>
+                <p id="t_v" class="counter">100</p>
+                <p style="font-size:medium">Total Visits</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let analytics_api_controller = (function () {
+            const API_KEY = "<secret>";
+            const CLIENT_ID = "<secret>";
+
+            function authenticate() {
+                return gapi.auth2.getAuthInstance()
+                    .signIn({ scope: "https://www.googleapis.com/auth/analytics https://www.googleapis.com/auth/analytics.readonly" })
+                    .then(function () { console.log("Sign-in successful"); },
+                        function (err) { console.error("Error signing in", err); });
+            }
+
+            function loadClient() {
+                gapi.client.setApiKey(API_KEY);
+                return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/analyticsreporting/v4/rest")
+                    .then(function () { console.log("GAPI client loaded for API"); },
+                        function (err) { console.error("Error loading GAPI client for API", err); });
+            }
+
+            function execute() {
+                return gapi.client.analyticsreporting.reports.batchGet({
+                    "resource": {
+                        "reportRequests": [{
+                            "viewId": "<secret>",
+                            "dateRanges": [{
+                                "startDate": "2018-03-01",
+                                "endDate": "2019-05-01"
+                            }],
+                            "metrics": [{ "expression": "ga:pageviews" }],
+                            "dimensions": [{ "name": "ga:pagePath" }],
+                            "dimensionFilterClauses": [{
+                                "filters": [{
+                                    "operator": "EXACT",
+                                    "dimensionName": "ga:pagePath",
+                                    "expressions": ["/articles/2019/05/10/myarticle.html"]
+                                }]
+                            }]
+                        }]
+                    }
+                }).then(function (response) {
+                    // Handle the results here (response.result has the parsed body).
+                    console.log("Response", response);
+                }, function (err) {
+                    console.error("Execute error", err);
+                });
+            }
+
+            function _viewsPerPage(pageUrl) {
+                return execute();
+            }
+
+            // Ctor
+            window.addEventListener("load", function(e) {
+                gapi.load("client:auth2", function () {
+                    gapi.auth2.init({ client_id: CLIENT_ID });
+                });
+
+                this.window.setTimeout(function() {
+                    authenticate().then(loadClient);
+                }, 2000);
+            });
+
+            return {
+                viewsPerPage: _viewsPerPage
+            };
+        })();
+    </script>
+</body>
+</html>

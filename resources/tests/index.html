@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159056701-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'UA-159056701-1');
+      </script>
+        <meta charset="UTF-8">
+        <title>Test Page</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- <link rel="manifest" href="manifest.json" type="application/json"> -->
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="bootstrap4.min.css">
+        <link rel="stylesheet" type="text/css" href="/resources/static/styles/style.css">
+        <style>
+            .evt {
+                background-color: darkkhaki;
+            }
+        </style>
+        <link rel='canonical' href='https://airhorner.com/'>
+        <meta name='mobile-web-app-capable' content='yes'>
+        <meta name='apple-mobile-web-app-capable' content='yes'>
+        <meta name='application-name' content='Air Horner'>
+        <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+        <meta name='apple-mobile-web-app-title' content='Air Horner'>
+        <!-- <link rel='icon' sizes='192x192' href='/images/touch/android-launchericon-192-192.png'> -->
+        <link rel='apple-touch-icon'  href='/images/touch/android-launchericon-192-192.png'>
+        <meta name='msapplication-TileImage' content='/images/touch/android-launchericon-144-144.png'>
+        <meta name='msapplication-TileColor' content='#2196F3'>
+        <meta name='theme-color' content='#2196F3'>
+        <meta property='og:title' content='Air Horn'>
+        <meta property='og:type' content='website'>
+        <meta property='og:image' content='https://airhorner.com/images/touch/android-launchericon-192-192.png'>
+        <meta property='og:url' content='https://airhorner.com/'>
+        <meta property='og:description' content='The best and easiest Air Horn web app there is. No install just use it right away in your browser!'>
+    </head>
+
+<body>
+    <div class="row mt-4">
+            <div aria-live="polite" aria-atomic="true" style="min-height: 200px;">
+                <!-- Position it -->
+                <div id="toast" style="position: absolute; top: 0; right: 0;">
+              
+                  <!-- Then put toasts within -->
+                  <div role="alert" aria-live="assertive" aria-atomic="true" class="toast 1" data-autohide="false">
+                    <div class="toast-header">
+                      <img src="/resources/icons/webapp-icon-32.png" class="rounded mr-2" alt="...">
+                      <strong class="mr-auto">Bootstrap</strong>
+                      <small class="text-muted time-1">just now</small>
+                      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="toast-body">
+                      See? Just like this.
+                    </div>
+                  </div>
+              
+                  <div role="toast" aria-live="assertive" aria-atomic="true" class="toast 0" data-autohide="false">
+                    <div class="toast-header">
+                      <img src="/resources/icons/webapp-icon-32.png" class="rounded mr-2" alt="...">
+                      <strong class="mr-auto">Bootstrap</strong>
+                      <small class="text-muted time-0">2 seconds ago</small>
+                      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="toast-body">
+                      Heads up, toasts will stack automatically
+                    </div>
+                  </div>
+                </div>
+              </div>
+    </div>
+
+    <script src="/resources/static/js/jquery-3.4.1.min.js"></script>
+    <script src="/resources/static/js/popper.min.js"></script>
+    <script src="/resources/static/js/bootstrap.min.js"></script>
+    <!-- <script src="/resources/includes/sort_algorithm.js"></script>
+    <script src="/resources/static/js/lazysizes.min.js" async></script> -->
+    <!-- <script>
+        const k = "https://kulubyahall.lan/kul_ssl/kulubyahall.key"
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker
+                   .register('Service_Worker.js')
+                   .then(_=> { 
+                       console.log("Progressive WebApp Server Registered")
+                   }
+                   ,err => {
+                    console.log('Progressive WebApp Server Registration failed! Due to \n'+err);
+                    })
+                    .catch( e => {
+                        console.log(e);
+                        
+                    })
+        } else {
+            console.log("No offline server support");
+            
+        }
+
+        defferedPrompt = null
+        window.addEventListener('beforeinstallprompt', e => {
+            console.log("beforeInstallprompt event fired")
+            e.preventDefault()
+            this.defferedPrompt = e
+            console.log(this.defferedPrompt+"4");
+            
+            return false
+        })
+        navigator.serviceWorker.ready.then( r => {
+            if(!r.pushManager){
+                alert("Push Notifications not supported")
+                return !1
+            }
+            r.pushManager.subscribe({
+                endpoint: 'https://www.kulubyahall.lan/',
+                keys: {
+                    p256dh: 'BFZOE6HpLtgOIfFg0JFhPMBVCC0AasJNrU1xqP7xLiA3Oh5RKKAZeyKzG8LILwkkdLvSsU9bGCS1IklI8xaCq5k',
+                    auth: 'sPCooYVLxy-O53u84df3rS4XC-iNbR3YvxmyYfv4H6A'
+                },
+                userVisibleOnly: true
+            })
+            .then( s => {
+                console.log('Subscribed to Push Notifications' + s)
+            })
+            .catch( e => {
+                console.log('Push Notifications Subscription error: \n' + e)
+            })
+        })
+        this.defferedPrompt.prompt()
+        this.defferedPrompt.userChoice.then(c=>{
+            console.log(c)
+        })
+        this.defferedPrompt = null
+        // $(window).on('beforeinstallprompt', _={
+        // })
+        </script>
+         -->
+    <!-- <script>
+        // var f= '<div role="alert" aria-live="assertive" aria-atomic="true" class="toast 2" data-autohide="false"><div class="toast-header"><img src="/resources/icons/webapp-icon-32.png" class="rounded mr-2" alt="..."><strong class="mr-auto">Bootstrap</strong><small class="text-muted time-1">just now</small><button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="toast-body">See? Just like this.</div></div>'
+        
+    </script> -->
+</body>
+
+</html>

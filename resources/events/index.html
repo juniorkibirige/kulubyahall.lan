@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159056701-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-159056701-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kulubya Hall : Events</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" style="border-radius: 50%" href="/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/resources/static/styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/resources/static/styles/style.css">
+    <style>
+        .evt {
+            background-color: darkkhaki;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('/resources/static/images/gazebo.jpg');">
+    <div class="container-fluid">
+
+        <div class="row fixed-top">
+            <nav></nav>
+        </div>
+        <div class="row mt-4">
+            <!--
+                The calendar block
+            -->
+            <div class="container px-5 mt-5 col-sm-12 col-md-6 col-lg-5"
+                style="width: 70%; justify-content: space-evenly;">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="7" id="my">
+                                    <h3></h3>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>MON</td>
+                                <td>TUE</td>
+                                <td>WED</td>
+                                <td>THUR</td>
+                                <td>FRI</td>
+                                <td>SAT</td>
+                                <td>SUN</td>
+                            </tr>
+                        </thead>
+                        <tbody id="cb">
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+            <div class="container col-sm-12 col-md-6 col-lg-5 pt-5 m-5" style="width: 30%;">
+                <table style="width: 70%;" border="1px solid white">
+                    <thead>
+                        <tr>
+                            <th style="width: 20px;"></th>
+                            <th style="color: burlywood;">Event Name</th>
+                            <th style="color: burlywood;">Day</th style="color: burlywood;">
+                        </tr>
+                    </thead>
+                    <tbody id="tev">
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="row mt-4">
+            <div class="container col-sm-11 col-md-11 col-lg-11 px-5 align-content-center" style="width: 90%">
+                <div class="row" style="width: 90%; justify-content: space-evenly" id="ev-cards">
+                    <div class="card align-content-center col-lg-2 col-md-3 col-xs-12 pb-2">
+                        <div class="card-header align-self-center text-center" style="width: 75% !important; padding: 3px 5px !important; background-color: rgba(0, 0, 0, 0.29);">No Events</div>
+                        <div class="card-body p-0">No events found</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/resources/static/js/jquery-3.4.1.min.js"></script>
+    <script src="/resources/includes/sort_algorithm.js"></script>
+    <script src="/resources/static/js/lazysizes.min.js" async></script>
+    <script>
+        $('nav').load('../includes/header.inc.php');
+    </script>
+    <script src="/resources/static/js/popper.min.js"></script>
+    <script src="/resources/static/js/bootstrap.min.js"></script>
+    <!-- <script src="/resources/static/js/stopper.js"></script> -->
+    <script src="/resources/includes/generate_calendar.js"></script>
+</body style="background-image: url('/resources/static/images/gazebo.jpg');">
+
+</html>
